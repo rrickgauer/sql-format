@@ -20,9 +20,6 @@ def getFormattedText():
     configData = getConfigData()
     sql = inputText.get("1.0", tk.END);
 
-
-    
-
     myobj = {
         'rqst_input_sql': sql,
         'rqst_formatOptions': configData,
