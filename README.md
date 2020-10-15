@@ -10,11 +10,12 @@ This project uses the following modules:
 
 ## Installation
 
-To install, download the repository via:
+To install, download the repository with pip via:
 
-```bash
-git clone https://github.com/rrickgauer/sql-format.git
+```sh
+pip install --upgrade sql_format
 ```
+
 
 ## Usage
 
