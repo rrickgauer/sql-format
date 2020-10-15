@@ -3,11 +3,12 @@ import requests
 import json
 
 # constants
-url             = 'http://www.gudusoft.com/format.php'
-ENTRY_WIDTH     = 100
-ENTRY_HEIGHT    = 20
-ENTRY_PADDING_X = 20
-BG_GREY         = 'lightgrey'
+url                 = 'http://www.gudusoft.com/format.php'
+ENTRY_WIDTH         = 150
+ENTRY_HEIGHT        = 25
+ENTRY_PADDING_X     = 25
+BG_GREY             = 'lightgrey'
+DEFAULT_OPTIONS_URL = 'https://raw.githubusercontent.com/rrickgauer/sql-format/master/options.json'
 
 # formats the text
 def formatText():
@@ -31,12 +32,12 @@ def getFormattedText():
 
 # returns the config data
 def getConfigData():
-    with open('options.json') as configFile:
-        configData = configFile.read()
-        return configData
+    configData = requests.get(DEFAULT_OPTIONS_URL).text
+    return configData
 
 # master window
 master = tk.Tk()
+master.title("SQL Formatter")
 master.configure(bg=BG_GREY)
 
 # sql format label
